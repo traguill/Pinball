@@ -25,7 +25,7 @@ bool ModuleSceneIntro::Start()
 
 	App->renderer->camera.x = App->renderer->camera.y = 0;
 
-	circle = App->textures->Load("pinball/wheel.png");
+	circle = App->textures->Load("pinball/ball.png");
 	background = App->textures->Load("pinball/background.png");
 
 	CreateMap();
@@ -46,11 +46,11 @@ update_status ModuleSceneIntro::Update()
 {
 	if (App->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN)
 	{
-		circles.add(App->physics->CreateCircle(App->input->GetMouseX(), App->input->GetMouseY(), 5, b2_dynamicBody));
+		circles.add(App->physics->CreateCircle(App->input->GetMouseX(), App->input->GetMouseY(),16, b2_dynamicBody));
 		// TODO 8: Make sure to add yourself as collision callback to the circle you creates
 	}
 
-
+	App->renderer->Blit(background, 0, 0);
 
 	// All draw functions ------------------------------------------------------
 	p2List_item<PhysBody*>* c = circles.getFirst();
@@ -66,7 +66,7 @@ update_status ModuleSceneIntro::Update()
 
 
 	//------------------------------------------------------
-	App->renderer->Blit(background, 0, 0);
+	
 
 	return UPDATE_CONTINUE;
 }
@@ -99,21 +99,21 @@ void ModuleSceneIntro::CreateMap()
 		347, 573,
 		18, 575
 	};
-	background_items.add(App->physics->CreateChain(0, 0, background, 48));
+	background_items.add(App->physics->CreateChain(0, 0, background, 48, b2_staticBody));
 
 	int metal_l[6] = {
 		42, 541,
 		41, 574,
 		124, 574
 	};
-	background_items.add(App->physics->CreateChain(0, 0, metal_l, 6));
+	background_items.add(App->physics->CreateChain(0, 0, metal_l, 6, b2_staticBody));
 
 	int metal_r[6] = {
 		321, 573,
 		320, 540,
 		241, 574
 	};
-	background_items.add(App->physics->CreateChain(0, 0, metal_r, 6));
+	background_items.add(App->physics->CreateChain(0, 0, metal_r, 6, b2_staticBody));
 
 	int wall_l[12] = {
 		40, 440,
@@ -123,7 +123,7 @@ void ModuleSceneIntro::CreateMap()
 		48, 501,
 		48, 439
 	};
-	background_items.add(App->physics->CreateChain(0, 0, wall_l, 12));
+	background_items.add(App->physics->CreateChain(0, 0, wall_l, 12, b2_staticBody));
 
 	int wall_r[18] = {
 		322, 502,
@@ -136,7 +136,7 @@ void ModuleSceneIntro::CreateMap()
 		328, 440,
 		322, 442
 	};
-	background_items.add(App->physics->CreateChain(0, 0, wall_r, 18));
+	background_items.add(App->physics->CreateChain(0, 0, wall_r, 18, b2_staticBody));
 
 	int triangle_l[10] = {
 		106, 508,
@@ -145,14 +145,14 @@ void ModuleSceneIntro::CreateMap()
 		77, 436,
 		114, 499
 	};
-	background_items.add(App->physics->CreateChain(0, 0, triangle_l, 10));
+	background_items.add(App->physics->CreateChain(0, 0, triangle_l, 10, b2_staticBody));
 
 	int triangle_r[6] = {
 		262, 502,
 		300, 487,
 		293, 447
 	};
-	background_items.add(App->physics->CreateChain(0, 0, triangle_r, 6));
+	background_items.add(App->physics->CreateChain(0, 0, triangle_r, 6, b2_staticBody));
 
 	int bar_down_l[12] = {
 		68, 122,
@@ -162,7 +162,7 @@ void ModuleSceneIntro::CreateMap()
 		82, 121,
 		75, 127
 	};
-	background_items.add(App->physics->CreateChain(0, 0, bar_down_l, 12));
+	background_items.add(App->physics->CreateChain(0, 0, bar_down_l, 12, b2_staticBody));
 
 	int bar_down_r[12] = {
 		287, 94,
@@ -172,7 +172,7 @@ void ModuleSceneIntro::CreateMap()
 		300, 93,
 		293, 87
 	};
-	background_items.add(App->physics->CreateChain(0, 0, bar_down_r, 12));
+	background_items.add(App->physics->CreateChain(0, 0, bar_down_r, 12, b2_staticBody));
 
 	int bar_up_l[12] = {
 		101, 67,
@@ -182,7 +182,7 @@ void ModuleSceneIntro::CreateMap()
 		108, 99,
 		101, 93
 	};
-	background_items.add(App->physics->CreateChain(0, 0, bar_up_l, 12));
+	background_items.add(App->physics->CreateChain(0, 0, bar_up_l, 12, b2_staticBody));
 
 	int bar_up_r[12] = {
 		261, 100,
@@ -192,7 +192,7 @@ void ModuleSceneIntro::CreateMap()
 		254, 69,
 		254, 95
 	};
-	background_items.add(App->physics->CreateChain(0, 0, bar_up_r, 12));
+	background_items.add(App->physics->CreateChain(0, 0, bar_up_r, 12, b2_staticBody));
 
 	background_items.add(App->physics->CreateCircle(291, 195, 17, b2_staticBody));
 	background_items.add(App->physics->CreateCircle(139, 267, 17, b2_staticBody));
@@ -200,6 +200,51 @@ void ModuleSceneIntro::CreateMap()
 	background_items.add(App->physics->CreateCircle(230, 133, 17, b2_staticBody));
 	background_items.add(App->physics->CreateCircle(139, 133, 17, b2_staticBody));
 	background_items.add(App->physics->CreateCircle(77, 195, 17, b2_staticBody));
+
+	int flipper_b_r[22] = {
+		250, 536,
+		241, 541,
+		230, 547,
+		206, 562,
+		202, 564,
+		201, 567,
+		205, 569,
+		256, 552,
+		260, 548,
+		260, 542,
+		255, 537
+	};
+
+	
+	
+
+	b2RevoluteJointDef flipper_r;
+	background_items.add(App->physics->CreateChain(0, 0, flipper_b_r, 22, b2_dynamicBody));
+	flipper_r.bodyA = background_items.getLast()->data->body;
+	background_items.add(App->physics->CreateCircle(251, 544, 7, b2_staticBody));
+	flipper_r.bodyB = background_items.getLast()->data->body;
+	flipper_r.collideConnected = false;
+
+	flipper_r.localAnchorA.Set(1, 1);
+	flipper_r.localAnchorB.Set(0, 0);
+
+	int flipper_b_l[14] = {
+		114, 549,
+		112, 543,
+		115, 538,
+		120, 536,
+		127, 537,
+		168, 568,
+		118, 553
+	};
+
+	background_items.add(App->physics->CreateChain(0, 0, flipper_b_l, 14, b2_dynamicBody));
+
+
+	
+
+
+
 }
 
 
