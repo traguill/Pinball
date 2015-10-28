@@ -1,12 +1,12 @@
-﻿Build started 25/10/2015 20:06:15.
-     1>Project "D:\DDV\2n Carrera\Fisica\Pinball\SDL Game.vcxproj" on node 2 (Build target(s)).
+﻿Compilación iniciada a las 28/10/2015 10:44:53.
+     1>Proyecto "D:\Users\josecr27\Documents\GitHub\Pinball\SDL Game.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ModuleSceneIntro.cpp
+         C:\soft\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ModuleSceneIntro.cpp
          ModuleSceneIntro.cpp
-     1>d:\ddv\2n carrera\fisica\pinball\modulesceneintro.cpp(253): warning C4101: 'y' : unreferenced local variable
-     1>d:\ddv\2n carrera\fisica\pinball\modulesceneintro.cpp(253): warning C4101: 'x' : unreferenced local variable
+     1>d:\users\josecr27\documents\github\pinball\modulesceneintro.cpp(210): warning C4101: 'y' : variable local sin referencia
+     1>d:\users\josecr27\documents\github\pinball\modulesceneintro.cpp(210): warning C4101: 'x' : variable local sin referencia
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\DDV\2n Carrera\Fisica\Pinball\Debug\2D Physics - class 4.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\DDV\2n Carrera\Fisica\Pinball\Debug\2D Physics - class 4.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\DDV\2n Carrera\Fisica\Pinball\Debug\2D Physics - class 4.lib" /MACHINE:X86 Debug\Application.obj
+         C:\soft\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\josecr27\Documents\GitHub\Pinball\Debug\2D Physics - class 4.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\josecr27\Documents\GitHub\Pinball\Debug\2D Physics - class 4.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\josecr27\Documents\GitHub\Pinball\Debug\2D Physics - class 4.lib" /MACHINE:X86 Debug\Application.obj
          Debug\log.obj
          Debug\Main.obj
          Debug\ModuleAudio.obj
@@ -17,9 +17,9 @@
          Debug\ModuleSceneIntro.obj
          Debug\ModuleTextures.obj
          Debug\ModuleWindow.obj
-         SDL Game.vcxproj -> D:\DDV\2n Carrera\Fisica\Pinball\Debug\2D Physics - class 4.exe
-     1>Done Building Project "D:\DDV\2n Carrera\Fisica\Pinball\SDL Game.vcxproj" (Build target(s)).
+         SDL Game.vcxproj -> D:\Users\josecr27\Documents\GitHub\Pinball\Debug\2D Physics - class 4.exe
+     1>Compilación del proyecto terminada "D:\Users\josecr27\Documents\GitHub\Pinball\SDL Game.vcxproj" (Build destinos).
 
-Build succeeded.
+Compilación correcta.
 
-Time Elapsed 00:00:00.92
+Tiempo transcurrido 00:00:01.54

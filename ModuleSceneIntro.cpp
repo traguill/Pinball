@@ -201,50 +201,7 @@ void ModuleSceneIntro::CreateMap()
 	background_items.add(App->physics->CreateCircle(139, 133, 17, b2_staticBody));
 	background_items.add(App->physics->CreateCircle(77, 195, 17, b2_staticBody));
 
-	int flipper_b_r[22] = {
-		250, 536,
-		241, 541,
-		230, 547,
-		206, 562,
-		202, 564,
-		201, 567,
-		205, 569,
-		256, 552,
-		260, 548,
-		260, 542,
-		255, 537
-	};
-
 	
-	
-
-	b2RevoluteJointDef flipper_r;
-	background_items.add(App->physics->CreateChain(0, 0, flipper_b_r, 22, b2_dynamicBody));
-	flipper_r.bodyA = background_items.getLast()->data->body;
-	background_items.add(App->physics->CreateCircle(251, 544, 7, b2_staticBody));
-	flipper_r.bodyB = background_items.getLast()->data->body;
-	flipper_r.collideConnected = false;
-
-	flipper_r.localAnchorA.Set(1, 1);
-	flipper_r.localAnchorB.Set(0, 0);
-
-	int flipper_b_l[14] = {
-		114, 549,
-		112, 543,
-		115, 538,
-		120, 536,
-		127, 537,
-		168, 568,
-		118, 553
-	};
-
-	background_items.add(App->physics->CreateChain(0, 0, flipper_b_l, 14, b2_dynamicBody));
-
-
-	
-
-
-
 }
 
 
